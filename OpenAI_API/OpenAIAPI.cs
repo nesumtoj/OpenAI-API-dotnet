@@ -36,12 +36,15 @@ namespace OpenAI_API
 			Completions = new CompletionEndpoint(this);
 			Engines = new EnginesEndpoint(this);
 			Search = new SearchEndpoint(this);
+			Answers = new AnswersEndpoint(this);
 		}
 
-		/// <summary>
-		/// Text generation is the core function of the API. You give the API a prompt, and it generates a completion. The way you “program” the API to do a task is by simply describing the task in plain english or providing a few written examples. This simple approach works for a wide range of use cases, including summarization, translation, grammar correction, question answering, chatbots, composing emails, and much more (see the prompt library for inspiration).
-		/// </summary>
-		public CompletionEndpoint Completions { get; }
+
+
+        /// <summary>
+        /// Text generation is the core function of the API. You give the API a prompt, and it generates a completion. The way you “program” the API to do a task is by simply describing the task in plain english or providing a few written examples. This simple approach works for a wide range of use cases, including summarization, translation, grammar correction, question answering, chatbots, composing emails, and much more (see the prompt library for inspiration).
+        /// </summary>
+        public CompletionEndpoint Completions { get; }
 
 		/// <summary>
 		/// The API endpoint for querying available Engines/models
@@ -53,8 +56,10 @@ namespace OpenAI_API
 		/// </summary>
 		public SearchEndpoint Search { get; }
 
-
-
+		/// <summary>
+		/// The API lets you do semantic search over documents. This means that you can provide a query, such as a natural language question or a statement, and find documents that answer the question or are semantically related to the statement. The “documents” can be words, sentences, paragraphs or even longer documents. For example, if you provide documents "White House", "hospital", "school" and query "the president", you’ll get a different similarity score for each document. The higher the similarity score, the more semantically similar the document is to the query (in this example, “White House” will be most similar to “the president”).
+		/// </summary>
+		public AnswersEndpoint Answers { get; }
 
 
 	}
